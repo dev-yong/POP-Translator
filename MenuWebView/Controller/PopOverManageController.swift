@@ -9,9 +9,9 @@
 import Foundation
 import Cocoa
 
-class PopOverManager: NSObject {
-    static private let _shared = PopOverManager()
-    static func shared() -> PopOverManager {
+class PopOverManageController: NSObject {
+    static private let _shared = PopOverManageController()
+    static var shared: PopOverManageController {
         return self._shared
     }
     
@@ -28,9 +28,9 @@ class PopOverManager: NSObject {
             button.action = #selector(togglePopover(_:))
         }
         
-        popover.contentViewController = PopOverManager.freshController()
-        popover.contentSize = NSSize(width: 400, height: 400*4/3)
-        popover.appearance = NSAppearance(named: NSAppearance.Name.aqua)
+        popover.contentViewController = PopOverManageController.freshController()
+        popover.contentSize = NSSize(width: 400, height: 400*16/9)
+        
         eventMonitor = EventMonitor(mask: [.leftMouseDown, .rightMouseDown]) { [weak self] event in
             guard let self = self else { return }
             if self.popover.isShown {
