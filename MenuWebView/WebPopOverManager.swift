@@ -28,7 +28,7 @@ class WebPopOverManager: NSObject {
             button.action = #selector(togglePopover(_:))
         }
         
-        popover.contentViewController = QuotesViewController.freshController()
+        popover.contentViewController = WebPopOverManager.freshController()
         
         eventMonitor = EventMonitor(mask: [.leftMouseDown, .rightMouseDown]) { [weak self] event in
             guard let self = self else { return }
@@ -57,4 +57,17 @@ class WebPopOverManager: NSObject {
         popover.performClose(sender)
         eventMonitor?.stop()
     }
+    
+    static func freshController() -> MainViewController {
+        //1.
+        let storyboard = NSStoryboard(name: NSStoryboard.Name("Main"), bundle: nil)
+        //2.
+        let identifier = NSStoryboard.SceneIdentifier("MainViewController")
+        //3.
+        guard let viewcontroller = storyboard.instantiateController(withIdentifier: identifier) as? MainViewController else {
+            fatalError("Why cant i find MainViewController? - Check Main.storyboard")
+        }
+        return viewcontroller
+    }
 }
+

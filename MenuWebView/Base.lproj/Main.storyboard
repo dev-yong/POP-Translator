@@ -1,7 +1,9 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="11134" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11134"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14460.31"/>
+        <plugIn identifier="com.apple.WebKit2IBPlugin" version="14460.31"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Application-->
@@ -673,45 +675,90 @@
                         <outlet property="delegate" destination="Voe-Tx-rLC" id="PrD-fu-P6m"/>
                     </connections>
                 </application>
-                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModuleProvider="target"/>
+                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="MenuWebView" customModuleProvider="target"/>
                 <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="75" y="0.0"/>
         </scene>
-        <!--Window Controller-->
-        <scene sceneID="R2V-B0-nI4">
-            <objects>
-                <windowController id="B8D-0N-5wS" sceneMemberID="viewController">
-                    <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
-                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
-                        <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-                        <rect key="contentRect" x="196" y="240" width="480" height="270"/>
-                        <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
-                        <connections>
-                            <outlet property="delegate" destination="B8D-0N-5wS" id="98r-iN-zZc"/>
-                        </connections>
-                    </window>
-                    <connections>
-                        <segue destination="XfG-lQ-9wD" kind="relationship" relationship="window.shadowedContentViewController" id="cq2-FE-JQM"/>
-                    </connections>
-                </windowController>
-                <customObject id="Oky-zY-oP4" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="75" y="250"/>
-        </scene>
-        <!--View Controller-->
+        <!--Main View Controller-->
         <scene sceneID="hIz-AP-VOD">
             <objects>
-                <viewController id="XfG-lQ-9wD" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MainViewController" id="XfG-lQ-9wD" customClass="MainViewController" customModule="MenuWebView" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" wantsLayer="YES" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                        <rect key="frame" x="0.0" y="0.0" width="400" height="500"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="LSW-Gv-7Zh">
+                                <rect key="frame" x="0.0" y="455" width="400" height="45"/>
+                                <subviews>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="wmO-vS-HYL">
+                                        <rect key="frame" x="18" y="12" width="41" height="21"/>
+                                        <textFieldCell key="cell" lineBreakMode="clipping" title="Title" id="qwL-Oq-obC">
+                                            <font key="font" metaFont="systemBold" size="17"/>
+                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="vdr-ej-KLR">
+                                        <rect key="frame" x="346" y="5" width="50" height="32"/>
+                                        <buttonCell key="cell" type="push" bezelStyle="rounded" image="NSSmartBadgeTemplate" imagePosition="overlaps" alignment="center" borderStyle="border" inset="2" id="Ac3-lG-S8C">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="refresh:" target="XfG-lQ-9wD" id="mix-1x-LVo"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="wmO-vS-HYL" firstAttribute="leading" secondItem="LSW-Gv-7Zh" secondAttribute="leading" constant="20" id="9II-F8-fve"/>
+                                    <constraint firstItem="wmO-vS-HYL" firstAttribute="centerY" secondItem="LSW-Gv-7Zh" secondAttribute="centerY" id="Kne-JF-YFz"/>
+                                    <constraint firstItem="vdr-ej-KLR" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="wmO-vS-HYL" secondAttribute="trailing" constant="8" symbolic="YES" id="SNi-ki-g3Y"/>
+                                    <constraint firstAttribute="height" constant="45" id="bPm-L6-8uv"/>
+                                    <constraint firstItem="vdr-ej-KLR" firstAttribute="centerY" secondItem="LSW-Gv-7Zh" secondAttribute="centerY" id="fdO-qo-lyE"/>
+                                    <constraint firstAttribute="trailing" secondItem="vdr-ej-KLR" secondAttribute="trailing" constant="10" id="n80-Bp-tH0"/>
+                                </constraints>
+                            </customView>
+                            <wkWebView wantsLayer="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qkN-Cn-W0N">
+                                <rect key="frame" x="0.0" y="0.0" width="400" height="455"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="Spf-kP-RJJ" customClass="IndicatorView" customModule="MenuWebView" customModuleProvider="target">
+                                <rect key="frame" x="175" y="225" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="S2O-zv-7N8"/>
+                                    <constraint firstAttribute="width" secondItem="Spf-kP-RJJ" secondAttribute="height" multiplier="1:1" id="el0-fV-3S4"/>
+                                </constraints>
+                            </customView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="LSW-Gv-7Zh" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="4Gx-Uk-pDB"/>
+                            <constraint firstAttribute="trailing" secondItem="LSW-Gv-7Zh" secondAttribute="trailing" id="8Ou-TA-wb5"/>
+                            <constraint firstItem="Spf-kP-RJJ" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="8t7-dE-rzL"/>
+                            <constraint firstItem="Spf-kP-RJJ" firstAttribute="centerY" secondItem="m2S-Jp-Qdl" secondAttribute="centerY" id="B3m-hS-3PU"/>
+                            <constraint firstItem="qkN-Cn-W0N" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="ODS-30-ycv"/>
+                            <constraint firstItem="LSW-Gv-7Zh" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="QrV-xh-MmC"/>
+                            <constraint firstItem="qkN-Cn-W0N" firstAttribute="top" secondItem="LSW-Gv-7Zh" secondAttribute="bottom" id="X3v-KF-J8b"/>
+                            <constraint firstAttribute="bottom" secondItem="qkN-Cn-W0N" secondAttribute="bottom" id="jeY-z9-Et0"/>
+                            <constraint firstAttribute="trailing" secondItem="qkN-Cn-W0N" secondAttribute="trailing" id="yA0-27-H2I"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="indicatorView" destination="Spf-kP-RJJ" id="zQY-L4-s2A"/>
+                        <outlet property="titleLabel" destination="wmO-vS-HYL" id="380-7p-hSm"/>
+                        <outlet property="webView" destination="qkN-Cn-W0N" id="N84-HD-iNL"/>
+                    </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="75" y="655"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="NSSmartBadgeTemplate" width="14" height="14"/>
+    </resources>
 </document>

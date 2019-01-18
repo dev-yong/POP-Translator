@@ -10,26 +10,74 @@ import Cocoa
 import WebKit
 
 class MainViewController: NSViewController {
-    var webView: WKWebView!
     
-    override func loadView() {
-        let webConfiguration = WKWebViewConfiguration()
-        webView = WKWebView(frame: .zero, configuration: webConfiguration)
-        webView.uiDelegate = self
-        view = webView
+    @IBOutlet weak var titleLabel: NSTextField!
+    @IBOutlet weak var webView: WKWebView!
+    @IBOutlet weak var indicatorView: IndicatorView!
+    
+    var translator = Translator.sample[1]
+    var urlRequest: URLRequest {
+        return URLRequest(url: self.translator.url)
     }
+    private var observation: NSKeyValueObservation?
+    
+    deinit {
+        if let observation = self.observation {
+            NotificationCenter.default.removeObserver(observation)
+        }
+        observation = nil
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let myURL = URL(string:"https://papago.naver.com")
-        let myRequest = URLRequest(url: myURL!)
-        webView.load(myRequest)
-        preferredContentSize = NSSize(width: 400, height: 600)
+        titleLabel.stringValue = translator.title
+        
+        let gesture = NSClickGestureRecognizer()
+        gesture.buttonMask = 0x1 // left mouse
+        gesture.numberOfClicksRequired = 1
+        gesture.target = self
+        gesture.action = #selector(reload)
+        
+        titleLabel.addGestureRecognizer(gesture)
+    
+    
+
+        webView.load(urlRequest)
+        webView.uiDelegate = self
+        webView.navigationDelegate = self
+        preferredContentSize = NSSize(width: 400, height: 400*4/3)
+        
+        webView.addObserver(self, forKeyPath: "estimatedProgress", options: .new, context: nil)
+    
+        observation = webView.observe(\WKWebView.estimatedProgress) { (webView, change) in
+            DispatchQueue.main.async {
+                print(webView.estimatedProgress)
+                self.setProgress(value: webView.estimatedProgress * 100)
+            }
+        }
+    }
+    
+    private func setProgress(value: Double) {
+        if value == 100 {
+            indicatorView.stopAnimation(self)
+        } else {
+            indicatorView.startAnimation(self)
+            indicatorView.set(value)
+        }
+    }
+    
+    @objc func reload() {
+        webView.load(urlRequest)
     }
     
 }
 
 extension MainViewController: WKUIDelegate {
+    
+}
+
+extension MainViewController: WKNavigationDelegate {
     
 }
 

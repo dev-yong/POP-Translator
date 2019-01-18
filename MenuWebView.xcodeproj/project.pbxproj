@@ -8,19 +8,27 @@
 
 /* Begin PBXBuildFile section */
 		8D60024A21F1210000663EE4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D60024921F1210000663EE4 /* AppDelegate.swift */; };
-		8D60024C21F1210000663EE4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D60024B21F1210000663EE4 /* ViewController.swift */; };
 		8D60024E21F1210100663EE4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D60024D21F1210100663EE4 /* Assets.xcassets */; };
 		8D60025121F1210100663EE4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D60024F21F1210100663EE4 /* Main.storyboard */; };
+		FC1D978B21F158EA00766E3D /* WebPopOverManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1D978821F158E900766E3D /* WebPopOverManager.swift */; };
+		FC1D978C21F158EA00766E3D /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1D978921F158EA00766E3D /* MainViewController.swift */; };
+		FC1D978D21F158EA00766E3D /* EventMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1D978A21F158EA00766E3D /* EventMonitor.swift */; };
+		FC1D978F21F160DA00766E3D /* Translator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1D978E21F160DA00766E3D /* Translator.swift */; };
+		FC1D979521F194DE00766E3D /* IndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1D979421F194DE00766E3D /* IndicatorView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		8D60024621F1210000663EE4 /* MenuWebView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MenuWebView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D60024921F1210000663EE4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		8D60024B21F1210000663EE4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		8D60024D21F1210100663EE4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8D60025021F1210100663EE4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8D60025221F1210100663EE4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D60025321F1210100663EE4 /* MenuWebView.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MenuWebView.entitlements; sourceTree = "<group>"; };
+		FC1D978821F158E900766E3D /* WebPopOverManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebPopOverManager.swift; sourceTree = "<group>"; };
+		FC1D978921F158EA00766E3D /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		FC1D978A21F158EA00766E3D /* EventMonitor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventMonitor.swift; sourceTree = "<group>"; };
+		FC1D978E21F160DA00766E3D /* Translator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Translator.swift; sourceTree = "<group>"; };
+		FC1D979421F194DE00766E3D /* IndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicatorView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,12 +61,16 @@
 		8D60024821F1210000663EE4 /* MenuWebView */ = {
 			isa = PBXGroup;
 			children = (
+				FC1D978A21F158EA00766E3D /* EventMonitor.swift */,
+				FC1D978921F158EA00766E3D /* MainViewController.swift */,
+				FC1D978821F158E900766E3D /* WebPopOverManager.swift */,
 				8D60024921F1210000663EE4 /* AppDelegate.swift */,
-				8D60024B21F1210000663EE4 /* ViewController.swift */,
 				8D60024D21F1210100663EE4 /* Assets.xcassets */,
 				8D60024F21F1210100663EE4 /* Main.storyboard */,
 				8D60025221F1210100663EE4 /* Info.plist */,
 				8D60025321F1210100663EE4 /* MenuWebView.entitlements */,
+				FC1D978E21F160DA00766E3D /* Translator.swift */,
+				FC1D979421F194DE00766E3D /* IndicatorView.swift */,
 			);
 			path = MenuWebView;
 			sourceTree = "<group>";
@@ -95,6 +107,11 @@
 				TargetAttributes = {
 					8D60024521F1210000663EE4 = {
 						CreatedOnToolsVersion = 10.1;
+						SystemCapabilities = {
+							com.apple.Sandbox = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -133,8 +150,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8D60024C21F1210000663EE4 /* ViewController.swift in Sources */,
+				FC1D978D21F158EA00766E3D /* EventMonitor.swift in Sources */,
 				8D60024A21F1210000663EE4 /* AppDelegate.swift in Sources */,
+				FC1D978B21F158EA00766E3D /* WebPopOverManager.swift in Sources */,
+				FC1D979521F194DE00766E3D /* IndicatorView.swift in Sources */,
+				FC1D978C21F158EA00766E3D /* MainViewController.swift in Sources */,
+				FC1D978F21F160DA00766E3D /* Translator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -274,7 +295,7 @@
 				CODE_SIGN_ENTITLEMENTS = MenuWebView/MenuWebView.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = 2HN43854TM;
+				DEVELOPMENT_TEAM = EPWV8KDDJE;
 				INFOPLIST_FILE = MenuWebView/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -293,7 +314,7 @@
 				CODE_SIGN_ENTITLEMENTS = MenuWebView/MenuWebView.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = 2HN43854TM;
+				DEVELOPMENT_TEAM = EPWV8KDDJE;
 				INFOPLIST_FILE = MenuWebView/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
