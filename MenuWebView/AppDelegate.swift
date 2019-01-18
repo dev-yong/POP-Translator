@@ -7,15 +7,38 @@
 //
 
 import Cocoa
+import ServiceManagement
+
+
 
 @NSApplicationMain
+
+
 class AppDelegate: NSObject, NSApplicationDelegate {
+    func acquirePrivileges() -> Bool {
+        let accessEnabled = AXIsProcessTrustedWithOptions(
+            [kAXTrustedCheckOptionPrompt.takeUnretainedValue() as String: true] as CFDictionary)
+        if accessEnabled != true {
+            print("You need to enable the keylogger in the System Prefrences")
+        }
+        return accessEnabled == true;
+    }
 
-
-
+    
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        // Insert code here to initialize your application
-        WebPopOverManager.shared()
+        let _ = PopOverManageController.shared
+        NSApp.setActivationPolicy(.prohibited)
+        
+        let launchAtLogIn = NSWorkspace.shared.runningApplications.contains{ $0.bundleIdentifier == Bundle.launchHelperBundleIdentifier }
+
+        if launchAtLogIn {
+            DistributedNotificationCenter.default().postNotificationName(.killMe,
+                                                                         object: Bundle.main.bundleIdentifier,
+                                                                         userInfo: nil,
+                                                                         deliverImmediately: true)
+        }
+        
+        
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
@@ -25,3 +48,16 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
 }
 
+
+
+extension Bundle {
+    static var launchHelperBundleIdentifier: String {
+        return "com.gy.AutoLaunchHelper"
+    }
+}
+
+extension NSNotification.Name {
+    static var killMe: NSNotification.Name {
+        return NSNotification.Name("KILLME")
+    }
+}

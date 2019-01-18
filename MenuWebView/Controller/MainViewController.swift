@@ -55,7 +55,11 @@ class MainViewController: NSViewController {
         updateUI(translator)
         
         launchAtLogInButton.state = LoginItem.isEnabled ? .on : .off
+        
+        
     }
+    
+    
     
     private func setProgress(value: Double) {
         progressIndicator.doubleValue = value
@@ -81,7 +85,6 @@ class MainViewController: NSViewController {
         progressIndicator.startAnimation(self)
         observations.append(webView.observe(\WKWebView.estimatedProgress) { (webView, change) in
             DispatchQueue.main.async {
-                print(webView.estimatedProgress)
                 self.setProgress(value: webView.estimatedProgress * 100)
             }
         })
@@ -100,7 +103,6 @@ class MainViewController: NSViewController {
     @objc func changeTranslator(_ sender: NSMenuItem) {
         
         guard let item = sender.representedObject as? Translator else { return }
-
         translator = item
         updateUI(item)
         UserDefaults.standard.set(translator.rawValue, forKey: UserDefaults.Key.translator.rawValue)
@@ -108,16 +110,14 @@ class MainViewController: NSViewController {
     
     func updateUI(_ item: Translator) {
         DispatchQueue.main.async {
-            self.titleLabel.stringValue = item.description
             self.webView.load(item.url.request)
+            self.titleLabel.stringValue = item.description
             self.mainMenu.items.forEach{ $0.state = ($0.representedObject as? Translator) == item ? .on : .off }
         }
     }
     
     @IBAction func settingButtonClicked(_ sender: NSButton) {
-        sender.menu?.popUp(positioning: nil,
-                           at: NSPoint(x: sender.frame.width, y: 0),
-                           in: sender)
+        sender.menu?.popUp(positioning: nil, at: NSPoint(x: 0, y: sender.frame.height + 5), in: sender)
     }
     
     @objc func reload() {

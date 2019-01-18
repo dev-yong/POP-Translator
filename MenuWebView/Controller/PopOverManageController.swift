@@ -18,6 +18,7 @@ class PopOverManageController: NSObject {
     let statusItem = NSStatusBar.system.statusItem(withLength:NSStatusItem.squareLength)
     let popover = NSPopover()
     var eventMonitor: EventMonitor?
+    var eventMonitor2: EventMonitor?
     
     override init() {
         super.init()
@@ -37,6 +38,57 @@ class PopOverManageController: NSObject {
                 self.closePopover(sender: event)
             }
         }
+        
+        
+        
+//        eventMonitor2 = EventMonitor(mask: NSEvent.EventTypeMask.flagsChanged, handler: { (event) in
+//            guard let event = event else { return }
+//            switch event.modifierFlags.intersection(.deviceIndependentFlagsMask) {
+//            case [.shift]:
+//                print("shift key is pressed")
+//            case [.control]:
+//                print("control key is pressed")
+//            case [.option] :
+//                print("option key is pressed")
+//            case [.command]:
+//                print("Command key is pressed")
+//            case [.control, .shift]:
+//                print("control-shift keys are pressed")
+//            case [.option, .shift]:
+//                print("option-shift keys are pressed")
+//            case [.command, .shift]:
+//                print("command-shift keys are pressed")
+//            case [.control, .option]:
+//                print("control-option keys are pressed")
+//            case [.control, .command]:
+//                print("control-command keys are pressed")
+//            case [.option, .command]:
+//                print("option-command keys are pressed")
+//            case [.shift, .control, .option]:
+//                print("shift-control-option keys are pressed")
+//            case [.shift, .control, .command]:
+//                print("shift-control-command keys are pressed")
+//            case [.control, .option, .command]:
+//                print("control-option-command keys are pressed")
+//            case [.shift, .command, .option]:
+//                print("shift-command-option keys are pressed")
+//            case [.shift, .control, .option, .command]:
+//                print("shift-control-option-command keys are pressed")
+//            default:
+//                print("no modifier keys are pressed")
+//            }
+//        })
+//
+//        eventMonitor2?.start()
+        
+        NSEvent.addLocalMonitorForEvents(matching: NSEvent.EventTypeMask.keyDown) { (event) -> NSEvent? in
+            print(event.modifierFlags.intersection(.deviceIndependentFlagsMask))
+            print(event.keyCode)
+            print(event.characters)
+            
+            return event
+        }
+        
     }
     
     @objc func togglePopover(_ sender: Any?) {

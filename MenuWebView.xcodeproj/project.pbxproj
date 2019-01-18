@@ -7,28 +7,55 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8D0C753A21F27C5800EA6515 /* WKWebView + transparentBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0C753921F27C5800EA6515 /* WKWebView + transparentBackground.swift */; };
+		8D0C753D21F27CAA00EA6515 /* UserDefaults + Key.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0C753C21F27CAA00EA6515 /* UserDefaults + Key.swift */; };
+		8D56EFB421F25FEA00478B70 /* LoginItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D56EFB321F25FEA00478B70 /* LoginItem.swift */; };
 		8D60024A21F1210000663EE4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D60024921F1210000663EE4 /* AppDelegate.swift */; };
 		8D60024E21F1210100663EE4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D60024D21F1210100663EE4 /* Assets.xcassets */; };
 		8D60025121F1210100663EE4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D60024F21F1210100663EE4 /* Main.storyboard */; };
-		FC1D978B21F158EA00766E3D /* WebPopOverManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1D978821F158E900766E3D /* WebPopOverManager.swift */; };
+		8D692B1D21F2382100E22A93 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D692B1C21F2382100E22A93 /* AppDelegate.swift */; };
+		8D692B2121F2382100E22A93 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D692B2021F2382100E22A93 /* Assets.xcassets */; };
+		8D692B2421F2382100E22A93 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D692B2221F2382100E22A93 /* Main.storyboard */; };
+		8D692B2D21F2389A00E22A93 /* AutoLaunchHelper.app in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8D692B1A21F2382100E22A93 /* AutoLaunchHelper.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		FC1D978B21F158EA00766E3D /* PopOverManageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1D978821F158E900766E3D /* PopOverManageController.swift */; };
 		FC1D978C21F158EA00766E3D /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1D978921F158EA00766E3D /* MainViewController.swift */; };
 		FC1D978D21F158EA00766E3D /* EventMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1D978A21F158EA00766E3D /* EventMonitor.swift */; };
 		FC1D978F21F160DA00766E3D /* Translator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1D978E21F160DA00766E3D /* Translator.swift */; };
-		FC1D979521F194DE00766E3D /* IndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1D979421F194DE00766E3D /* IndicatorView.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		8D692B2C21F2389200E22A93 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = Contents/Library/LoginItems;
+			dstSubfolderSpec = 1;
+			files = (
+				8D692B2D21F2389A00E22A93 /* AutoLaunchHelper.app in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		8D0C753921F27C5800EA6515 /* WKWebView + transparentBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WKWebView + transparentBackground.swift"; sourceTree = "<group>"; };
+		8D0C753C21F27CAA00EA6515 /* UserDefaults + Key.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults + Key.swift"; sourceTree = "<group>"; };
+		8D56EFB321F25FEA00478B70 /* LoginItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginItem.swift; sourceTree = "<group>"; };
 		8D60024621F1210000663EE4 /* MenuWebView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MenuWebView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D60024921F1210000663EE4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8D60024D21F1210100663EE4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8D60025021F1210100663EE4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8D60025221F1210100663EE4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D60025321F1210100663EE4 /* MenuWebView.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MenuWebView.entitlements; sourceTree = "<group>"; };
-		FC1D978821F158E900766E3D /* WebPopOverManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebPopOverManager.swift; sourceTree = "<group>"; };
+		8D692B1A21F2382100E22A93 /* AutoLaunchHelper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AutoLaunchHelper.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8D692B1C21F2382100E22A93 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		8D692B2021F2382100E22A93 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8D692B2321F2382100E22A93 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		8D692B2521F2382100E22A93 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8D692B2621F2382100E22A93 /* AutoLaunchHelper.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AutoLaunchHelper.entitlements; sourceTree = "<group>"; };
+		FC1D978821F158E900766E3D /* PopOverManageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopOverManageController.swift; sourceTree = "<group>"; };
 		FC1D978921F158EA00766E3D /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		FC1D978A21F158EA00766E3D /* EventMonitor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventMonitor.swift; sourceTree = "<group>"; };
 		FC1D978E21F160DA00766E3D /* Translator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Translator.swift; sourceTree = "<group>"; };
-		FC1D979421F194DE00766E3D /* IndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicatorView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,13 +66,56 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		8D692B1721F2382100E22A93 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8D0C753721F27C3E00EA6515 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				8D0C753C21F27CAA00EA6515 /* UserDefaults + Key.swift */,
+				8D0C753921F27C5800EA6515 /* WKWebView + transparentBackground.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		8D0C753821F27C4500EA6515 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FC1D978E21F160DA00766E3D /* Translator.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		8D0C753B21F27C9400EA6515 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				FC1D978A21F158EA00766E3D /* EventMonitor.swift */,
+				8D56EFB321F25FEA00478B70 /* LoginItem.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		8D0C753E21F27CD800EA6515 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				FC1D978821F158E900766E3D /* PopOverManageController.swift */,
+				FC1D978921F158EA00766E3D /* MainViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		8D60023D21F1210000663EE4 = {
 			isa = PBXGroup;
 			children = (
 				8D60024821F1210000663EE4 /* MenuWebView */,
+				8D692B1B21F2382100E22A93 /* AutoLaunchHelper */,
 				8D60024721F1210000663EE4 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -54,6 +124,7 @@
 			isa = PBXGroup;
 			children = (
 				8D60024621F1210000663EE4 /* MenuWebView.app */,
+				8D692B1A21F2382100E22A93 /* AutoLaunchHelper.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -61,18 +132,29 @@
 		8D60024821F1210000663EE4 /* MenuWebView */ = {
 			isa = PBXGroup;
 			children = (
-				FC1D978A21F158EA00766E3D /* EventMonitor.swift */,
-				FC1D978921F158EA00766E3D /* MainViewController.swift */,
-				FC1D978821F158E900766E3D /* WebPopOverManager.swift */,
+				8D0C753E21F27CD800EA6515 /* Controller */,
+				8D0C753B21F27C9400EA6515 /* Util */,
+				8D0C753821F27C4500EA6515 /* Model */,
+				8D0C753721F27C3E00EA6515 /* Extension */,
 				8D60024921F1210000663EE4 /* AppDelegate.swift */,
 				8D60024D21F1210100663EE4 /* Assets.xcassets */,
 				8D60024F21F1210100663EE4 /* Main.storyboard */,
 				8D60025221F1210100663EE4 /* Info.plist */,
 				8D60025321F1210100663EE4 /* MenuWebView.entitlements */,
-				FC1D978E21F160DA00766E3D /* Translator.swift */,
-				FC1D979421F194DE00766E3D /* IndicatorView.swift */,
 			);
 			path = MenuWebView;
+			sourceTree = "<group>";
+		};
+		8D692B1B21F2382100E22A93 /* AutoLaunchHelper */ = {
+			isa = PBXGroup;
+			children = (
+				8D692B1C21F2382100E22A93 /* AppDelegate.swift */,
+				8D692B2021F2382100E22A93 /* Assets.xcassets */,
+				8D692B2221F2382100E22A93 /* Main.storyboard */,
+				8D692B2521F2382100E22A93 /* Info.plist */,
+				8D692B2621F2382100E22A93 /* AutoLaunchHelper.entitlements */,
+			);
+			path = AutoLaunchHelper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -85,6 +167,7 @@
 				8D60024221F1210000663EE4 /* Sources */,
 				8D60024321F1210000663EE4 /* Frameworks */,
 				8D60024421F1210000663EE4 /* Resources */,
+				8D692B2C21F2389200E22A93 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -93,6 +176,23 @@
 			name = MenuWebView;
 			productName = MenuWebView;
 			productReference = 8D60024621F1210000663EE4 /* MenuWebView.app */;
+			productType = "com.apple.product-type.application";
+		};
+		8D692B1921F2382100E22A93 /* AutoLaunchHelper */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8D692B2721F2382100E22A93 /* Build configuration list for PBXNativeTarget "AutoLaunchHelper" */;
+			buildPhases = (
+				8D692B1621F2382100E22A93 /* Sources */,
+				8D692B1721F2382100E22A93 /* Frameworks */,
+				8D692B1821F2382100E22A93 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AutoLaunchHelper;
+			productName = AutoLaunchHelper;
+			productReference = 8D692B1A21F2382100E22A93 /* AutoLaunchHelper.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -106,6 +206,14 @@
 				ORGANIZATIONNAME = GY;
 				TargetAttributes = {
 					8D60024521F1210000663EE4 = {
+						CreatedOnToolsVersion = 10.1;
+						SystemCapabilities = {
+							com.apple.Sandbox = {
+								enabled = 1;
+							};
+						};
+					};
+					8D692B1921F2382100E22A93 = {
 						CreatedOnToolsVersion = 10.1;
 						SystemCapabilities = {
 							com.apple.Sandbox = {
@@ -129,6 +237,7 @@
 			projectRoot = "";
 			targets = (
 				8D60024521F1210000663EE4 /* MenuWebView */,
+				8D692B1921F2382100E22A93 /* AutoLaunchHelper */,
 			);
 		};
 /* End PBXProject section */
@@ -143,6 +252,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		8D692B1821F2382100E22A93 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D692B2121F2382100E22A93 /* Assets.xcassets in Resources */,
+				8D692B2421F2382100E22A93 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -151,11 +269,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				FC1D978D21F158EA00766E3D /* EventMonitor.swift in Sources */,
+				8D0C753A21F27C5800EA6515 /* WKWebView + transparentBackground.swift in Sources */,
 				8D60024A21F1210000663EE4 /* AppDelegate.swift in Sources */,
-				FC1D978B21F158EA00766E3D /* WebPopOverManager.swift in Sources */,
-				FC1D979521F194DE00766E3D /* IndicatorView.swift in Sources */,
+				8D56EFB421F25FEA00478B70 /* LoginItem.swift in Sources */,
+				FC1D978B21F158EA00766E3D /* PopOverManageController.swift in Sources */,
 				FC1D978C21F158EA00766E3D /* MainViewController.swift in Sources */,
+				8D0C753D21F27CAA00EA6515 /* UserDefaults + Key.swift in Sources */,
 				FC1D978F21F160DA00766E3D /* Translator.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8D692B1621F2382100E22A93 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D692B1D21F2382100E22A93 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -166,6 +294,14 @@
 			isa = PBXVariantGroup;
 			children = (
 				8D60025021F1210100663EE4 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		8D692B2221F2382100E22A93 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8D692B2321F2382100E22A93 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -295,12 +431,13 @@
 				CODE_SIGN_ENTITLEMENTS = MenuWebView/MenuWebView.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = EPWV8KDDJE;
+				DEVELOPMENT_TEAM = 2HN43854TM;
 				INFOPLIST_FILE = MenuWebView/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				PRODUCT_BUNDLE_IDENTIFIER = com.gy.MenuWebView;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -314,14 +451,61 @@
 				CODE_SIGN_ENTITLEMENTS = MenuWebView/MenuWebView.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = EPWV8KDDJE;
+				DEVELOPMENT_TEAM = 2HN43854TM;
 				INFOPLIST_FILE = MenuWebView/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				PRODUCT_BUNDLE_IDENTIFIER = com.gy.MenuWebView;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+			};
+			name = Release;
+		};
+		8D692B2821F2382100E22A93 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = AutoLaunchHelper/AutoLaunchHelper.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 2HN43854TM;
+				INFOPLIST_FILE = AutoLaunchHelper/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				PRODUCT_BUNDLE_IDENTIFIER = com.gy.AutoLaunchHelper;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+			};
+			name = Debug;
+		};
+		8D692B2921F2382100E22A93 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = AutoLaunchHelper/AutoLaunchHelper.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 2HN43854TM;
+				INFOPLIST_FILE = AutoLaunchHelper/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				PRODUCT_BUNDLE_IDENTIFIER = com.gy.AutoLaunchHelper;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
@@ -343,6 +527,15 @@
 			buildConfigurations = (
 				8D60025721F1210100663EE4 /* Debug */,
 				8D60025821F1210100663EE4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8D692B2721F2382100E22A93 /* Build configuration list for PBXNativeTarget "AutoLaunchHelper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8D692B2821F2382100E22A93 /* Debug */,
+				8D692B2921F2382100E22A93 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
