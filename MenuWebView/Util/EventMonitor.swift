@@ -18,7 +18,6 @@ class EventMonitor {
     public init(mask: NSEvent.EventTypeMask, handler: @escaping EventHandler) {
         self.mask = mask
         self.handler = handler
-        
     }
     
     deinit {
