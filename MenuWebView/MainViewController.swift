@@ -15,10 +15,12 @@ class MainViewController: NSViewController {
     @IBOutlet weak var webView: WKWebView!
     @IBOutlet weak var indicatorView: IndicatorView!
     
-    var translator = Translator.sample[1]
+    var translator = Translator.sample[2]
     var urlRequest: URLRequest {
         return URLRequest(url: self.translator.url)
     }
+    private var minWidth: CGFloat = 400
+    private var minHeight: CGFloat = 400*4/3
     private var observation: NSKeyValueObservation?
     
     deinit {
@@ -52,7 +54,6 @@ class MainViewController: NSViewController {
     
         observation = webView.observe(\WKWebView.estimatedProgress) { (webView, change) in
             DispatchQueue.main.async {
-                print(webView.estimatedProgress)
                 self.setProgress(value: webView.estimatedProgress * 100)
             }
         }
@@ -70,7 +71,6 @@ class MainViewController: NSViewController {
     @objc func reload() {
         webView.load(urlRequest)
     }
-    
 }
 
 extension MainViewController: WKUIDelegate {

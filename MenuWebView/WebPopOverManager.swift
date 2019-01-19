@@ -9,6 +9,7 @@
 import Foundation
 import Cocoa
 
+//https://github.com/dboydor/PopoverResize/blob/master/PopoverResize/PopoverResize/PopoverResize.swift
 class WebPopOverManager: NSObject {
     static private let _shared = WebPopOverManager()
     static func shared() -> WebPopOverManager {
