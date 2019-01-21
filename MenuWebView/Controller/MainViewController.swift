@@ -54,9 +54,7 @@ class MainViewController: NSViewController {
         }
         updateUI(translator)
         
-        launchAtLogInButton.state = LoginItem.isEnabled ? .on : .off
-        
-        
+        launchAtLogInButton.state = LoginItem.isEnabled ? .on : .off        
     }
     
     
@@ -71,7 +69,7 @@ class MainViewController: NSViewController {
         gesture.buttonMask = 0x1 // left mouse
         gesture.numberOfClicksRequired = 1
         gesture.target = self
-        gesture.action = #selector(reload)
+        gesture.action = #selector(loadHome)
         
         titleLabel.addGestureRecognizer(gesture)
     }
@@ -91,13 +89,36 @@ class MainViewController: NSViewController {
     }
     
     func setUpMenu() {
-        mainMenu.addItem(NSMenuItem(title: "Home", action: #selector(reload), keyEquivalent: "h"))
+        mainMenu.addItem(NSMenuItem(title: "Home", action: #selector(loadHome), keyEquivalent: "h"))
         mainMenu.addItem(NSMenuItem.separator())
         translatorMenuItems.forEach { mainMenu.addItem($0) }
         mainMenu.addItem(NSMenuItem.separator())
         mainMenu.addItem(NSMenuItem(title: "Quit", action: #selector(NSApplication.terminate(_:)), keyEquivalent: "q"))
         
         settingButton.menu = mainMenu
+    }
+    
+    override func keyDown(with event: NSEvent) {
+        switch event.modifierFlags.intersection(.deviceIndependentFlagsMask) {
+        case [.command]:
+            guard let character = event.characters else { return }
+            switch character {
+            case "1":
+                translator = Translator.allCases[0]
+            case "2":
+                translator = Translator.allCases[1]
+            case "3":
+                translator = Translator.allCases[2]
+            case "h":
+                loadHome()
+            case "r":
+                webView.reload()
+            default:
+                break
+            }
+        default:
+            break
+        }
     }
     
     @objc func changeTranslator(_ sender: NSMenuItem) {
@@ -120,10 +141,10 @@ class MainViewController: NSViewController {
         sender.menu?.popUp(positioning: nil, at: NSPoint(x: 0, y: sender.frame.height + 5), in: sender)
     }
     
-    @objc func reload() {
+    @objc func loadHome() {
         webView.load(translator.url.request)
     }
-    
+
     @IBAction func lauchAtLogInButtonClicked(_ sender: NSButton) {
         let isOn = sender.state == .on
         LoginItem.set(isOn) { (success) in

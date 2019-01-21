@@ -37,9 +37,7 @@ class PopOverManageController: NSObject {
             if self.popover.isShown {
                 self.closePopover(sender: event)
             }
-        }
-        
-        
+        }      
         
 //        eventMonitor2 = EventMonitor(mask: NSEvent.EventTypeMask.flagsChanged, handler: { (event) in
 //            guard let event = event else { return }
@@ -81,13 +79,7 @@ class PopOverManageController: NSObject {
 //
 //        eventMonitor2?.start()
         
-        NSEvent.addLocalMonitorForEvents(matching: NSEvent.EventTypeMask.keyDown) { (event) -> NSEvent? in
-            print(event.modifierFlags.intersection(.deviceIndependentFlagsMask))
-            print(event.keyCode)
-            print(event.characters)
-            
-            return event
-        }
+        
         
     }
     

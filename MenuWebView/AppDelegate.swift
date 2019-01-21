@@ -37,8 +37,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                                                                          userInfo: nil,
                                                                          deliverImmediately: true)
         }
-        
-        
+//        event.modifierFlags.intersection(.deviceIndependentFlagsMask)
+        EventMonitor(mask: .keyDown) { (event) in
+            guard let event = event else { return }
+            switch event.modifierFlags.intersection(.deviceIndependentFlagsMask) {
+                
+            }
+        }
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
