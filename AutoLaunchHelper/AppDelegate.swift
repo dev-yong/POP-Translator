@@ -28,7 +28,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             components.removeLast()
             components.removeLast()
             components.append("MacOS")
-            components.append("MenuWebView")
+            components.append("POP Translator")
             
             let newPath = NSString.path(withComponents: components)
             
@@ -51,7 +51,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
 extension Bundle {
     static var targetBundleIdentifier: String {
-        return "com.gy.MenuWebView"
+        return "com.gy.POPTranslator"
     }
 }
 
