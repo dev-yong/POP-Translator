@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
+        <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14460.31"/>
         <plugIn identifier="com.apple.WebKit2IBPlugin" version="14460.31"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -726,18 +727,29 @@
                                             <action selector="lauchAtLogInButtonClicked:" target="XfG-lQ-9wD" id="rQo-2H-0zU"/>
                                         </connections>
                                     </button>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="0MM-Zi-eja">
+                                        <rect key="frame" x="65" y="16" width="41" height="13"/>
+                                        <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="hotkey" id="xrv-wt-4jw">
+                                            <font key="font" metaFont="system" size="10"/>
+                                            <color key="textColor" red="0.75447338819999998" green="0.75820690390000001" blue="0.76639074090000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="ND3-Nd-d1H" secondAttribute="trailing" constant="-1" id="4IX-9f-5XS"/>
                                     <constraint firstItem="wmO-vS-HYL" firstAttribute="leading" secondItem="LSW-Gv-7Zh" secondAttribute="leading" constant="20" id="9II-F8-fve"/>
                                     <constraint firstAttribute="bottom" secondItem="ND3-Nd-d1H" secondAttribute="bottom" id="KL1-dI-UZc"/>
                                     <constraint firstItem="wmO-vS-HYL" firstAttribute="centerY" secondItem="LSW-Gv-7Zh" secondAttribute="centerY" id="Kne-JF-YFz"/>
+                                    <constraint firstItem="9hs-Q0-a0v" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="0MM-Zi-eja" secondAttribute="trailing" constant="10" id="Qrz-Vz-Na6"/>
                                     <constraint firstItem="vdr-ej-KLR" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="wmO-vS-HYL" secondAttribute="trailing" constant="8" symbolic="YES" id="SNi-ki-g3Y"/>
                                     <constraint firstItem="ND3-Nd-d1H" firstAttribute="leading" secondItem="LSW-Gv-7Zh" secondAttribute="leading" constant="-1" id="Uaz-gb-fvC"/>
+                                    <constraint firstItem="0MM-Zi-eja" firstAttribute="centerY" secondItem="wmO-vS-HYL" secondAttribute="centerY" id="ayI-ZV-U66"/>
                                     <constraint firstAttribute="height" constant="45" id="bPm-L6-8uv"/>
                                     <constraint firstItem="vdr-ej-KLR" firstAttribute="centerY" secondItem="LSW-Gv-7Zh" secondAttribute="centerY" id="fdO-qo-lyE"/>
                                     <constraint firstItem="9hs-Q0-a0v" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="wmO-vS-HYL" secondAttribute="trailing" constant="8" symbolic="YES" id="mDG-eJ-PO8"/>
                                     <constraint firstAttribute="trailing" secondItem="vdr-ej-KLR" secondAttribute="trailing" id="n80-Bp-tH0"/>
+                                    <constraint firstItem="0MM-Zi-eja" firstAttribute="leading" secondItem="wmO-vS-HYL" secondAttribute="trailing" constant="10" id="s0n-zq-p8w"/>
                                     <constraint firstItem="9hs-Q0-a0v" firstAttribute="centerY" secondItem="LSW-Gv-7Zh" secondAttribute="centerY" id="sbk-04-Cj1"/>
                                     <constraint firstItem="vdr-ej-KLR" firstAttribute="leading" secondItem="9hs-Q0-a0v" secondAttribute="trailing" constant="5" id="tw6-ha-LHT"/>
                                 </constraints>
@@ -761,6 +773,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="hotKeyLabel" destination="0MM-Zi-eja" id="06C-K9-qtm"/>
                         <outlet property="launchAtLogInButton" destination="9hs-Q0-a0v" id="QPn-5j-j7J"/>
                         <outlet property="progressIndicator" destination="ND3-Nd-d1H" id="oQj-DP-X5v"/>
                         <outlet property="settingButton" destination="vdr-ej-KLR" id="s61-ji-9gb"/>

@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Cocoa
 
 class HotKey {
     static private var _shared: HotKey = HotKey()
@@ -20,6 +21,8 @@ class HotKey {
             [kAXTrustedCheckOptionPrompt.takeUnretainedValue() as String: true] as CFDictionary)
     }
     
+    var flag: NSEvent.ModifierFlags = [.command, .shift]
+    var keyCode = 0x03
     
     init() {
         let _ = acquirePrivileges()
@@ -27,7 +30,7 @@ class HotKey {
             guard let event = event else { return }
             
             switch event.modifierFlags.intersection(.deviceIndependentFlagsMask) {
-            case [.control, .command] where event.keyCode == 0x11:
+            case self.flag where event.keyCode == self.keyCode:
                 PopOverManageController.shared.togglePopover(nil)
             default:
                 break

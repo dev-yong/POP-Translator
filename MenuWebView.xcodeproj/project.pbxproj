@@ -41,7 +41,7 @@
 		8D0C753921F27C5800EA6515 /* WKWebView + transparentBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WKWebView + transparentBackground.swift"; sourceTree = "<group>"; };
 		8D0C753C21F27CAA00EA6515 /* UserDefaults + Key.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults + Key.swift"; sourceTree = "<group>"; };
 		8D56EFB321F25FEA00478B70 /* LoginItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginItem.swift; sourceTree = "<group>"; };
-		8D60024621F1210000663EE4 /* MenuWebView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MenuWebView.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8D60024621F1210000663EE4 /* POP Translator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "POP Translator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D60024921F1210000663EE4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8D60024D21F1210100663EE4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8D60025021F1210100663EE4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -126,7 +126,7 @@
 		8D60024721F1210000663EE4 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				8D60024621F1210000663EE4 /* MenuWebView.app */,
+				8D60024621F1210000663EE4 /* POP Translator.app */,
 				8D692B1A21F2382100E22A93 /* AutoLaunchHelper.app */,
 			);
 			name = Products;
@@ -163,9 +163,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		8D60024521F1210000663EE4 /* MenuWebView */ = {
+		8D60024521F1210000663EE4 /* POP Translator */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 8D60025621F1210100663EE4 /* Build configuration list for PBXNativeTarget "MenuWebView" */;
+			buildConfigurationList = 8D60025621F1210100663EE4 /* Build configuration list for PBXNativeTarget "POP Translator" */;
 			buildPhases = (
 				8D60024221F1210000663EE4 /* Sources */,
 				8D60024321F1210000663EE4 /* Frameworks */,
@@ -176,9 +176,9 @@
 			);
 			dependencies = (
 			);
-			name = MenuWebView;
+			name = "POP Translator";
 			productName = MenuWebView;
-			productReference = 8D60024621F1210000663EE4 /* MenuWebView.app */;
+			productReference = 8D60024621F1210000663EE4 /* POP Translator.app */;
 			productType = "com.apple.product-type.application";
 		};
 		8D692B1921F2382100E22A93 /* AutoLaunchHelper */ = {
@@ -239,7 +239,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				8D60024521F1210000663EE4 /* MenuWebView */,
+				8D60024521F1210000663EE4 /* POP Translator */,
 				8D692B1921F2382100E22A93 /* AutoLaunchHelper */,
 			);
 		};
@@ -524,7 +524,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		8D60025621F1210100663EE4 /* Build configuration list for PBXNativeTarget "MenuWebView" */ = {
+		8D60025621F1210100663EE4 /* Build configuration list for PBXNativeTarget "POP Translator" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				8D60025721F1210100663EE4 /* Debug */,

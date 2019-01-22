@@ -13,6 +13,7 @@ import WebKit
 class MainViewController: NSViewController {
     
     @IBOutlet weak var titleLabel: NSTextField!
+    @IBOutlet weak var hotKeyLabel: NSTextField!
     @IBOutlet weak var webView: WKWebView!
     @IBOutlet weak var progressIndicator: NSProgressIndicator!
     @IBOutlet weak var settingButton: NSButton!
@@ -54,7 +55,11 @@ class MainViewController: NSViewController {
         }
         updateUI(translator)
         
-        launchAtLogInButton.state = LoginItem.isEnabled ? .on : .off        
+        launchAtLogInButton.state = LoginItem.isEnabled ? .on : .off
+
+        hotKeyLabel.stringValue = "(⌘ + ⇧ + f)"
+//        print(HotKey.shared.flag)
+//        print(HotKey.shared.keyCode)
     }
     
     
@@ -65,6 +70,8 @@ class MainViewController: NSViewController {
     }
     
     func setUplabel() {
+        titleLabel.stringValue = Bundle.main.infoDictionary!["CFBundleName"] as! String
+        
         let gesture = NSClickGestureRecognizer()
         gesture.buttonMask = 0x1 // left mouse
         gesture.numberOfClicksRequired = 1
@@ -132,7 +139,6 @@ class MainViewController: NSViewController {
     func updateUI(_ item: Translator) {
         DispatchQueue.main.async {
             self.webView.load(item.url.request)
-            self.titleLabel.stringValue = item.description
             self.mainMenu.items.forEach{ $0.state = ($0.representedObject as? Translator) == item ? .on : .off }
         }
     }
