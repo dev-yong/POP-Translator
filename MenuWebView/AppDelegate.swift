@@ -15,6 +15,8 @@ import ServiceManagement
 
 
 class AppDelegate: NSObject, NSApplicationDelegate {
+    var eventMonitor: EventMonitor?
+    
     func acquirePrivileges() -> Bool {
         let accessEnabled = AXIsProcessTrustedWithOptions(
             [kAXTrustedCheckOptionPrompt.takeUnretainedValue() as String: true] as CFDictionary)
@@ -24,8 +26,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         return accessEnabled == true;
     }
 
-    
     func applicationDidFinishLaunching(_ aNotification: Notification) {
+        acquirePrivileges()
+        
         let _ = PopOverManageController.shared
         NSApp.setActivationPolicy(.prohibited)
         
@@ -37,13 +40,19 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                                                                          userInfo: nil,
                                                                          deliverImmediately: true)
         }
-//        event.modifierFlags.intersection(.deviceIndependentFlagsMask)
-        EventMonitor(mask: .keyDown) { (event) in
+        
+        eventMonitor = EventMonitor(mask: .keyDown) { (event) in
             guard let event = event else { return }
+            
             switch event.modifierFlags.intersection(.deviceIndependentFlagsMask) {
-                
+            case [.control, .command] where event.keyCode == 0x11:
+                    PopOverManageController.shared.togglePopover(nil)
+            default:
+                break
             }
         }
+
+        eventMonitor?.start()
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
