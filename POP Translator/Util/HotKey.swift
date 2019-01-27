@@ -20,24 +20,9 @@ class HotKey {
         return AXIsProcessTrustedWithOptions(
             [kAXTrustedCheckOptionPrompt.takeUnretainedValue() as String: true] as CFDictionary)
     }
-    
-    var flag: NSEvent.ModifierFlags = [.command, .shift]
-    var keyCode = 0x03
-    
+
     init() {
         let _ = acquirePrivileges()
-        eventMonitor = EventMonitor(mask: .keyDown) { (event) in
-            guard let event = event else { return }
-            
-            switch event.modifierFlags.intersection(.deviceIndependentFlagsMask) {
-            case self.flag where event.keyCode == self.keyCode:
-                PopOverManageController.shared.togglePopover(nil)
-            default:
-                break
-            }
-        }
-        
-        eventMonitor?.start()
     }
     
     deinit {
@@ -49,5 +34,20 @@ class HotKey {
             print("You need to enable the keylogger in the System Prefrences")
         }
         return isAccessable
+    }
+    
+    func register(flag: NSEvent.ModifierFlags, keyCode: UInt16? = nil, handler: (()->Void)?) {
+        eventMonitor = EventMonitor(mask: [.flagsChanged, .keyDown]) { (event) in
+            guard let event = event else { return }
+            
+            switch event.modifierFlags.intersection(.deviceIndependentFlagsMask) {
+            case flag where event.keyCode == keyCode:
+                handler?()
+            default:
+                break
+            }
+        }
+        
+        eventMonitor?.start()
     }
 }

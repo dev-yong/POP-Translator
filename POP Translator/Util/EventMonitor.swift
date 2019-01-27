@@ -9,6 +9,7 @@
 import Foundation
 import Cocoa
 
+//https://www.raywenderlich.com/450-menus-and-popovers-in-menu-bar-apps-for-macos
 class EventMonitor {
     typealias EventHandler = (NSEvent?) -> ()
     private var monitor: Any?

@@ -38,6 +38,10 @@ class PopOverManageController: NSObject {
                 self.closePopover(sender: event)
             }
         }
+        
+        HotKey.shared.register(flag: [.shift, .option], keyCode: 0x003) {
+            self.togglePopover(nil)
+        }
     }
     
     @objc func togglePopover(_ sender: Any?) {

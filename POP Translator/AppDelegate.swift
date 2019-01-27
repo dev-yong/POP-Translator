@@ -20,7 +20,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
         launchAtLogIn()
         let _ = PopOverManageController.shared
-        let _ = HotKey.shared
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {

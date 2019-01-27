@@ -135,11 +135,11 @@
 		8D60024821F1210000663EE4 /* POP Translator */ = {
 			isa = PBXGroup;
 			children = (
+				8D60024921F1210000663EE4 /* AppDelegate.swift */,
 				8D0C753E21F27CD800EA6515 /* Controller */,
 				8D0C753B21F27C9400EA6515 /* Util */,
 				8D0C753821F27C4500EA6515 /* Model */,
 				8D0C753721F27C3E00EA6515 /* Extension */,
-				8D60024921F1210000663EE4 /* AppDelegate.swift */,
 				8D60024D21F1210100663EE4 /* Assets.xcassets */,
 				8D60024F21F1210100663EE4 /* Main.storyboard */,
 				8D60025221F1210100663EE4 /* Info.plist */,
