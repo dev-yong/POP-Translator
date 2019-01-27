@@ -15,7 +15,7 @@ class PopOverManageController: NSObject {
         return self._shared
     }
     
-    let statusItem = NSStatusBar.system.statusItem(withLength:NSStatusItem.squareLength)
+    let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.squareLength)
     let popover = NSPopover()
     var eventMonitor: EventMonitor?
     var eventMonitor2: EventMonitor?
@@ -37,10 +37,6 @@ class PopOverManageController: NSObject {
             if self.popover.isShown {
                 self.closePopover(sender: event)
             }
-        }
-        
-        HotKey.shared.register(flag: [.shift, .option], keyCode: 0x003) {
-            self.togglePopover(nil)
         }
     }
     
@@ -76,4 +72,3 @@ class PopOverManageController: NSObject {
         return viewcontroller
     }
 }
-

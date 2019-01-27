@@ -9,17 +9,16 @@
 import Cocoa
 import ServiceManagement
 
-
+//https://stackoverflow.com/questions/49716420/adding-a-global-monitor-with-nseventmaskkeydown-mask-does-not-trigger
 
 @NSApplicationMain
-
-
 class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         NSApp.setActivationPolicy(.prohibited)
 
         launchAtLogIn()
-        let _ = PopOverManageController.shared
+        
+        PopOverManageController.shared
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
@@ -27,7 +26,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     func launchAtLogIn() {
-        let isLaunchAtLogIn = NSWorkspace.shared.runningApplications.contains{ $0.bundleIdentifier == Bundle.launchHelperBundleIdentifier }
+        let isLaunchAtLogIn = NSWorkspace.shared.runningApplications.contains { $0.bundleIdentifier == Bundle.launchHelperBundleIdentifier }
         
         if isLaunchAtLogIn {
             DistributedNotificationCenter.default().postNotificationName(.killMe,

@@ -16,7 +16,7 @@ class WebPopOverManager: NSObject {
         return self._shared
     }
     
-    let statusItem = NSStatusBar.system.statusItem(withLength:NSStatusItem.squareLength)
+    let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.squareLength)
     let popover = NSPopover()
     var eventMonitor: EventMonitor?
     
@@ -71,4 +71,3 @@ class WebPopOverManager: NSObject {
         return viewcontroller
     }
 }
-

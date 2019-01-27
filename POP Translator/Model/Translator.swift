@@ -8,7 +8,6 @@
 
 import Foundation
 
-
 enum Translator: Int, CustomStringConvertible, CaseIterable {
     case google = 0, naver = 1, kakao = 2
     

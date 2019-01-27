@@ -9,7 +9,6 @@
 import Cocoa
 import WebKit
 
-
 class MainViewController: NSViewController {
     
     @IBOutlet weak var titleLabel: NSTextField!
@@ -29,7 +28,7 @@ class MainViewController: NSViewController {
         let items = Translator.allCases.enumerated().map {
             return NSMenuItem(title: $1.description, action: #selector(changeTranslator(_:)), keyEquivalent: "\($0 + 1)")
         }
-        items.enumerated().forEach{ $1.representedObject = Translator.allCases[$0] }
+        items.enumerated().forEach { $1.representedObject = Translator.allCases[$0] }
         return items
     }()
     
@@ -38,7 +37,7 @@ class MainViewController: NSViewController {
     private var observations: [NSKeyValueObservation] = []
     
     deinit {
-        observations.forEach{ NotificationCenter.default.removeObserver($0) }
+        observations.forEach { NotificationCenter.default.removeObserver($0) }
         observations.removeAll()
     }
     
@@ -68,7 +67,8 @@ class MainViewController: NSViewController {
     }
     
     func setUplabel() {
-        titleLabel.stringValue = Bundle.main.infoDictionary!["CFBundleName"] as! String
+        guard let bundleName = Bundle.main.infoDictionary!["CFBundleName"] as? String else { return }
+        titleLabel.stringValue = bundleName
         
         let gesture = NSClickGestureRecognizer()
         gesture.buttonMask = 0x1 // left mouse
@@ -86,7 +86,7 @@ class MainViewController: NSViewController {
         webView.addObserver(self, forKeyPath: "estimatedProgress", options: .new, context: nil)
         
         progressIndicator.startAnimation(self)
-        observations.append(webView.observe(\WKWebView.estimatedProgress) { (webView, change) in
+        observations.append(webView.observe(\WKWebView.estimatedProgress) { (webView, _) in
             DispatchQueue.main.async {
                 self.setProgress(value: webView.estimatedProgress * 100)
             }
@@ -137,7 +137,7 @@ class MainViewController: NSViewController {
     func updateUI(_ item: Translator) {
         DispatchQueue.main.async {
             self.webView.load(item.url.request)
-            self.mainMenu.items.forEach{ $0.state = ($0.representedObject as? Translator) == item ? .on : .off }
+            self.mainMenu.items.forEach { $0.state = ($0.representedObject as? Translator) == item ? .on : .off }
         }
     }
     

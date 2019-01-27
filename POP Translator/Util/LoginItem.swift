@@ -10,12 +10,10 @@ import Foundation
 import ServiceManagement
 
 class LoginItem {
-    
     static var isEnabled: Bool {
         return UserDefaults.standard.bool(forKey: UserDefaults.Key.lauchAtLogIn.rawValue)
     }
-    
-    static func set(_ value: Bool, completion: @escaping(Bool)->()) {
+    static func set(_ value: Bool, completion: @escaping (Bool) -> Void) {
         let success = SMLoginItemSetEnabled(Bundle.launchHelperBundleIdentifier as CFString, value)
         if success {
             UserDefaults.standard.set(value, forKey: UserDefaults.Key.lauchAtLogIn.rawValue)

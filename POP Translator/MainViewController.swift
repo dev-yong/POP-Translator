@@ -42,8 +42,6 @@ class MainViewController: NSViewController {
         gesture.action = #selector(reload)
         
         titleLabel.addGestureRecognizer(gesture)
-    
-    
 
         webView.load(urlRequest)
         webView.uiDelegate = self
@@ -52,7 +50,7 @@ class MainViewController: NSViewController {
         
         webView.addObserver(self, forKeyPath: "estimatedProgress", options: .new, context: nil)
     
-        observation = webView.observe(\WKWebView.estimatedProgress) { (webView, change) in
+        observation = webView.observe(\WKWebView.estimatedProgress) { (webView, _) in
             DispatchQueue.main.async {
                 self.setProgress(value: webView.estimatedProgress * 100)
             }

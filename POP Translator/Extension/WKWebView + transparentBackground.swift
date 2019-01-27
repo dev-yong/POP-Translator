@@ -13,8 +13,7 @@ extension WKWebView {
     func transparentBackground() {
         if NSAppKitVersion.current.rawValue > 1500 {
             self.setValue(false, forKey: "drawsBackground")
-        }
-        else {
+        } else {
             self.setValue(true, forKey: "drawsTransparentBackground")
         }
     }

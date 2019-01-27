@@ -13,15 +13,14 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 //https://stackoverflow.com/questions/35339277/make-swift-cocoa-app-launch-on-startup-on-os-x-10-11
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        let alreadyRunning = NSWorkspace.shared.runningApplications.contains{ $0.bundleIdentifier == Bundle.targetBundleIdentifier }
-        
+        let alreadyRunning = NSWorkspace.shared.runningApplications
+                                .contains { $0.bundleIdentifier == Bundle.targetBundleIdentifier }
         if alreadyRunning {
            self.terminate()
         }
-        
         if !alreadyRunning {
             DistributedNotificationCenter.default().addObserver(self, selector: #selector(terminate), name: .killMe, object: Bundle.targetBundleIdentifier)
-            
+
             let path = Bundle.main.bundlePath as NSString
             var components = path.pathComponents
             components.removeLast()
@@ -29,12 +28,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             components.removeLast()
             components.append("MacOS")
             components.append("POP Translator")
-            
+
             let newPath = NSString.path(withComponents: components)
             
             NSWorkspace.shared.launchApplication(newPath)
-        }
-        else {
+        } else {
             self.terminate()
         }
 

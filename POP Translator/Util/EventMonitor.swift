@@ -11,7 +11,7 @@ import Cocoa
 
 //https://www.raywenderlich.com/450-menus-and-popovers-in-menu-bar-apps-for-macos
 class EventMonitor {
-    typealias EventHandler = (NSEvent?) -> ()
+    typealias EventHandler = (NSEvent?) -> Void
     private var monitor: Any?
     private let mask: NSEvent.EventTypeMask
     private let handler: EventHandler
