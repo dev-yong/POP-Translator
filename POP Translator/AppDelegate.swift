@@ -8,6 +8,7 @@
 
 import Cocoa
 import ServiceManagement
+import MASShortcut
 
 //https://stackoverflow.com/questions/49716420/adding-a-global-monitor-with-nseventmaskkeydown-mask-does-not-trigger
 
@@ -20,6 +21,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         launchAtLogIn()
         
         PopOverManageController.shared
+        registerShortcut()
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
@@ -35,6 +37,14 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                                                                          userInfo: nil,
                                                                          deliverImmediately: true)
         }
+    }
+    
+    func registerShortcut() {
+        MASShortcutBinder.shared()?.bindShortcut(withDefaultsKey: UserDefaults.Key.globalShortcut.rawValue, toAction: {
+            PopOverManageController.shared.togglePopover(nil)
+        })
+        
+        MASShortcutBinder.shared()?.registerDefaultShortcuts([UserDefaults.Key.globalShortcut.rawValue: MASShortcut(keyCode: UInt(kVK_ANSI_D), modifierFlags: NSEvent.ModifierFlags.shift.rawValue + NSEvent.ModifierFlags.option.rawValue)])
     }
 }
 

@@ -11,8 +11,7 @@ import WebKit
 
 class MainViewController: NSViewController {
     
-    @IBOutlet weak var titleLabel: NSTextField!
-    @IBOutlet weak var hotKeyLabel: NSTextField!
+    @IBOutlet weak var shortcutView: MASShortcutView!
     @IBOutlet weak var webView: WKWebView!
     @IBOutlet weak var progressIndicator: NSProgressIndicator!
     @IBOutlet weak var settingButton: NSButton!
@@ -24,7 +23,7 @@ class MainViewController: NSViewController {
         }
     }
     
-    var translatorMenuItems: [NSMenuItem] = {
+    private var translatorMenuItems: [NSMenuItem] = {
         let items = Translator.allCases.enumerated().map {
             return NSMenuItem(title: $1.description, action: #selector(changeTranslator(_:)), keyEquivalent: "\($0 + 1)")
         }
@@ -56,7 +55,7 @@ class MainViewController: NSViewController {
         
         launchAtLogInButton.state = LoginItem.isEnabled ? .on : .off
 
-        hotKeyLabel.stringValue = "⇧ ⌥ D"
+        shortcutView.associatedUserDefaultsKey = UserDefaults.Key.globalShortcut.rawValue
     }
     
     private func setProgress(value: Double) {
@@ -64,20 +63,15 @@ class MainViewController: NSViewController {
         progressIndicator.isHidden = value == 100
     }
     
-    func setUplabel() {
-        guard let bundleName = Bundle.main.infoDictionary!["CFBundleName"] as? String else { return }
-        titleLabel.stringValue = bundleName
-        
+    private func setUplabel() {
         let gesture = NSClickGestureRecognizer()
         gesture.buttonMask = 0x1 // left mouse
         gesture.numberOfClicksRequired = 1
         gesture.target = self
         gesture.action = #selector(loadHome)
-        
-        titleLabel.addGestureRecognizer(gesture)
     }
     
-    func setUpWebView() {
+    private func setUpWebView() {
         webView.uiDelegate = self
         webView.navigationDelegate = self
         webView.transparentBackground()
@@ -91,7 +85,7 @@ class MainViewController: NSViewController {
         })
     }
     
-    func setUpMenu() {
+    private func setUpMenu() {
         mainMenu.addItem(NSMenuItem(title: "Home", action: #selector(loadHome), keyEquivalent: "h"))
         mainMenu.addItem(NSMenuItem.separator())
         translatorMenuItems.forEach { mainMenu.addItem($0) }
@@ -132,7 +126,7 @@ class MainViewController: NSViewController {
         UserDefaults.standard.set(translator.rawValue, forKey: UserDefaults.Key.translator.rawValue)
     }
     
-    func updateUI(_ item: Translator) {
+    private func updateUI(_ item: Translator) {
         DispatchQueue.main.async {
             self.webView.load(item.url.request)
             self.mainMenu.items.forEach { $0.state = ($0.representedObject as? Translator) == item ? .on : .off }
@@ -143,7 +137,7 @@ class MainViewController: NSViewController {
         sender.menu?.popUp(positioning: nil, at: NSPoint(x: 0, y: sender.frame.height + 5), in: sender)
     }
     
-    @objc func loadHome() {
+    @objc private func loadHome() {
         webView.load(translator.url.request)
     }
 

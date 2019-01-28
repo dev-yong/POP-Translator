@@ -12,5 +12,6 @@ extension UserDefaults {
     enum Key: String {
         case lauchAtLogIn = "LAUNCHATLOGIN"
         case translator = "TRANSLATOR"
+        case globalShortcut = "GLOBALSHORTCUT"
     }
 }
