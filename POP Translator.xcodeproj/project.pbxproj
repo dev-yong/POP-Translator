@@ -17,6 +17,8 @@
 		8D692B2121F2382100E22A93 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D692B2021F2382100E22A93 /* Assets.xcassets */; };
 		8D692B2421F2382100E22A93 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D692B2221F2382100E22A93 /* Main.storyboard */; };
 		8D692B2D21F2389A00E22A93 /* AutoLaunchHelper.app in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8D692B1A21F2382100E22A93 /* AutoLaunchHelper.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		A3A079AE7C8184E88922E02C /* Pods_POP_Translator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D719A558BC5389507CBAC9D7 /* Pods_POP_Translator.framework */; };
+		EE4F478FEFA4442B0C690D1E /* Pods_AutoLaunchHelper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 038D5936001EA6A050FC347D /* Pods_AutoLaunchHelper.framework */; };
 		FC1D978B21F158EA00766E3D /* PopOverManageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1D978821F158E900766E3D /* PopOverManageController.swift */; };
 		FC1D978C21F158EA00766E3D /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1D978921F158EA00766E3D /* MainViewController.swift */; };
 		FC1D978D21F158EA00766E3D /* EventMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1D978A21F158EA00766E3D /* EventMonitor.swift */; };
@@ -38,6 +40,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		038D5936001EA6A050FC347D /* Pods_AutoLaunchHelper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AutoLaunchHelper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1AFF08296C24135E45AC6FDD /* Pods-AutoLaunchHelper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AutoLaunchHelper.release.xcconfig"; path = "Pods/Target Support Files/Pods-AutoLaunchHelper/Pods-AutoLaunchHelper.release.xcconfig"; sourceTree = "<group>"; };
+		2281E5E18A4F449E27854B5A /* Pods-AutoLaunchHelper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AutoLaunchHelper.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AutoLaunchHelper/Pods-AutoLaunchHelper.debug.xcconfig"; sourceTree = "<group>"; };
 		8D0C753921F27C5800EA6515 /* WKWebView + transparentBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WKWebView + transparentBackground.swift"; sourceTree = "<group>"; };
 		8D0C753C21F27CAA00EA6515 /* UserDefaults + Key.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults + Key.swift"; sourceTree = "<group>"; };
 		8D56EFB321F25FEA00478B70 /* LoginItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginItem.swift; sourceTree = "<group>"; };
@@ -53,6 +58,10 @@
 		8D692B2321F2382100E22A93 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8D692B2521F2382100E22A93 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D692B2621F2382100E22A93 /* AutoLaunchHelper.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AutoLaunchHelper.entitlements; sourceTree = "<group>"; };
+		90D516585550BB28A8E683D5 /* Pods-POP Translator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-POP Translator.debug.xcconfig"; path = "Pods/Target Support Files/Pods-POP Translator/Pods-POP Translator.debug.xcconfig"; sourceTree = "<group>"; };
+		BDEF8EE921C34CD619B30F49 /* Pods-POP Translator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-POP Translator.release.xcconfig"; path = "Pods/Target Support Files/Pods-POP Translator/Pods-POP Translator.release.xcconfig"; sourceTree = "<group>"; };
+		D719A558BC5389507CBAC9D7 /* Pods_POP_Translator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_POP_Translator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FC165CE621FE885900046926 /* BridingHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BridingHeader.h; sourceTree = "<group>"; };
 		FC1D978821F158E900766E3D /* PopOverManageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopOverManageController.swift; sourceTree = "<group>"; };
 		FC1D978921F158EA00766E3D /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		FC1D978A21F158EA00766E3D /* EventMonitor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventMonitor.swift; sourceTree = "<group>"; };
@@ -65,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A3A079AE7C8184E88922E02C /* Pods_POP_Translator.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,12 +82,24 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EE4F478FEFA4442B0C690D1E /* Pods_AutoLaunchHelper.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4282075AAD2F16CB6E62EDF9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2281E5E18A4F449E27854B5A /* Pods-AutoLaunchHelper.debug.xcconfig */,
+				1AFF08296C24135E45AC6FDD /* Pods-AutoLaunchHelper.release.xcconfig */,
+				90D516585550BB28A8E683D5 /* Pods-POP Translator.debug.xcconfig */,
+				BDEF8EE921C34CD619B30F49 /* Pods-POP Translator.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		8D0C753721F27C3E00EA6515 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
@@ -120,6 +142,8 @@
 				8D60024821F1210000663EE4 /* POP Translator */,
 				8D692B1B21F2382100E22A93 /* AutoLaunchHelper */,
 				8D60024721F1210000663EE4 /* Products */,
+				4282075AAD2F16CB6E62EDF9 /* Pods */,
+				AD3D4B30C9A77C4F3676CA37 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -144,6 +168,7 @@
 				8D60024F21F1210100663EE4 /* Main.storyboard */,
 				8D60025221F1210100663EE4 /* Info.plist */,
 				8D60025321F1210100663EE4 /* MenuWebView.entitlements */,
+				FC165CE621FE885900046926 /* BridingHeader.h */,
 			);
 			path = "POP Translator";
 			sourceTree = "<group>";
@@ -160,6 +185,15 @@
 			path = AutoLaunchHelper;
 			sourceTree = "<group>";
 		};
+		AD3D4B30C9A77C4F3676CA37 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				038D5936001EA6A050FC347D /* Pods_AutoLaunchHelper.framework */,
+				D719A558BC5389507CBAC9D7 /* Pods_POP_Translator.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -167,11 +201,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8D60025621F1210100663EE4 /* Build configuration list for PBXNativeTarget "POP Translator" */;
 			buildPhases = (
+				FE98995E4DCDDCF8927984D1 /* [CP] Check Pods Manifest.lock */,
 				8D60024221F1210000663EE4 /* Sources */,
 				8D60024321F1210000663EE4 /* Frameworks */,
 				8D60024421F1210000663EE4 /* Resources */,
 				8D692B2C21F2389200E22A93 /* CopyFiles */,
 				FC3E3A9D21FE6E0200884A82 /* Run Script */,
+				98699DE9315C95F929A3E7C2 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -186,6 +222,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8D692B2721F2382100E22A93 /* Build configuration list for PBXNativeTarget "AutoLaunchHelper" */;
 			buildPhases = (
+				1E1805950E07525AAA4DC8FD /* [CP] Check Pods Manifest.lock */,
 				8D692B1621F2382100E22A93 /* Sources */,
 				8D692B1721F2382100E22A93 /* Frameworks */,
 				8D692B1821F2382100E22A93 /* Resources */,
@@ -269,23 +306,73 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		1E1805950E07525AAA4DC8FD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AutoLaunchHelper-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		98699DE9315C95F929A3E7C2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-POP Translator/Pods-POP Translator-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/MASShortcut/MASShortcut.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MASShortcut.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-POP Translator/Pods-POP Translator-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		FC3E3A9D21FE6E0200884A82 /* Run Script */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 			);
 			name = "Run Script";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+		FE98995E4DCDDCF8927984D1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-POP Translator-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -452,16 +539,14 @@
 		};
 		8D60025721F1210100663EE4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 90D516585550BB28A8E683D5 /* Pods-POP Translator.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = EPWV8KDDJE;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/Mac",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = "$(SRCROOT)/POP Translator/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -471,22 +556,21 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.gy.POPTranslator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "POP Translator/BridingHeader.h";
 				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
 		8D60025821F1210100663EE4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BDEF8EE921C34CD619B30F49 /* Pods-POP Translator.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = EPWV8KDDJE;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/Mac",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = "$(SRCROOT)/POP Translator/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -496,12 +580,14 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.gy.POPTranslator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "POP Translator/BridingHeader.h";
 				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
 		};
 		8D692B2821F2382100E22A93 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2281E5E18A4F449E27854B5A /* Pods-AutoLaunchHelper.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = AutoLaunchHelper/AutoLaunchHelper.entitlements;
@@ -525,6 +611,7 @@
 		};
 		8D692B2921F2382100E22A93 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1AFF08296C24135E45AC6FDD /* Pods-AutoLaunchHelper.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = AutoLaunchHelper/AutoLaunchHelper.entitlements;
