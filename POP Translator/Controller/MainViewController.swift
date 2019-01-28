@@ -56,9 +56,7 @@ class MainViewController: NSViewController {
         
         launchAtLogInButton.state = LoginItem.isEnabled ? .on : .off
 
-        hotKeyLabel.stringValue = "(⌘ + ⇧ + f)"
-//        print(HotKey.shared.flag)
-//        print(HotKey.shared.keyCode)
+        hotKeyLabel.stringValue = "⇧ ⌥ D"
     }
     
     private func setProgress(value: Double) {

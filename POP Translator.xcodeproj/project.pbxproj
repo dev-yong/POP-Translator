@@ -22,7 +22,6 @@
 		FC1D978D21F158EA00766E3D /* EventMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1D978A21F158EA00766E3D /* EventMonitor.swift */; };
 		FC1D978F21F160DA00766E3D /* Translator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1D978E21F160DA00766E3D /* Translator.swift */; };
 		FC3E3AA021FE6E7C00884A82 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = FC3E3A9F21FE6E7C00884A82 /* .swiftlint.yml */; };
-		FC3E3AA321FE71CE00884A82 /* HotKey.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC3E3AA221FE71CD00884A82 /* HotKey.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -59,7 +58,6 @@
 		FC1D978A21F158EA00766E3D /* EventMonitor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventMonitor.swift; sourceTree = "<group>"; };
 		FC1D978E21F160DA00766E3D /* Translator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Translator.swift; sourceTree = "<group>"; };
 		FC3E3A9F21FE6E7C00884A82 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .swiftlint.yml; sourceTree = "<group>"; };
-		FC3E3AA221FE71CD00884A82 /* HotKey.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HotKey.framework; path = Carthage/Build/Mac/HotKey.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,7 +65,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FC3E3AA321FE71CE00884A82 /* HotKey.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -123,7 +120,6 @@
 				8D60024821F1210000663EE4 /* POP Translator */,
 				8D692B1B21F2382100E22A93 /* AutoLaunchHelper */,
 				8D60024721F1210000663EE4 /* Products */,
-				FC3E3AA121FE71CD00884A82 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -162,14 +158,6 @@
 				8D692B2621F2382100E22A93 /* AutoLaunchHelper.entitlements */,
 			);
 			path = AutoLaunchHelper;
-			sourceTree = "<group>";
-		};
-		FC3E3AA121FE71CD00884A82 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				FC3E3AA221FE71CD00884A82 /* HotKey.framework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -289,7 +277,6 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/Mac/HotKey.framework",
 			);
 			name = "Run Script";
 			outputFileListPaths = (
@@ -298,7 +285,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n\n/usr/local/bin/carthage copy-frameworks\n";
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
