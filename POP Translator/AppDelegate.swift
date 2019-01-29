@@ -20,7 +20,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
         launchAtLogIn()
         
-        PopOverManageController.shared
+        //swiftlint:disable redundant_discardable_let
+        let _ = PopOverManageController.shared
         registerShortcut()
     }
 
@@ -40,22 +41,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     func registerShortcut() {
+        MASShortcutValidator.shared()?.allowAnyShortcutWithOptionModifier = true
         MASShortcutBinder.shared()?.bindShortcut(withDefaultsKey: UserDefaults.Key.globalShortcut.rawValue, toAction: {
             PopOverManageController.shared.togglePopover(nil)
         })
         
         MASShortcutBinder.shared()?.registerDefaultShortcuts([UserDefaults.Key.globalShortcut.rawValue: MASShortcut(keyCode: UInt(kVK_ANSI_D), modifierFlags: NSEvent.ModifierFlags.shift.rawValue + NSEvent.ModifierFlags.option.rawValue)])
-    }
-}
-
-extension Bundle {
-    static var launchHelperBundleIdentifier: String {
-        return "com.gy.AutoLaunchHelper"
-    }
-}
-
-extension NSNotification.Name {
-    static var killMe: NSNotification.Name {
-        return NSNotification.Name("KILLME")
     }
 }

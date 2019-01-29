@@ -29,7 +29,7 @@ class PopOverManageController: NSObject {
             button.action = #selector(togglePopover(_:))
         }
         
-        popover.contentViewController = PopOverManageController.freshController()
+        popover.contentViewController = MainViewController.create(storyboardName: .main)
         popover.contentSize = NSSize(width: 400, height: 400*16/9)
         
         eventMonitor = EventMonitor(mask: [.leftMouseDown, .rightMouseDown]) { [weak self] event in
@@ -58,17 +58,5 @@ class PopOverManageController: NSObject {
     func closePopover(sender: Any?) {
         popover.performClose(sender)
         eventMonitor?.stop()
-    }
-    
-    static func freshController() -> MainViewController {
-        //1.
-        let storyboard = NSStoryboard(name: NSStoryboard.Name("Main"), bundle: nil)
-        //2.
-        let identifier = NSStoryboard.SceneIdentifier("MainViewController")
-        //3.
-        guard let viewcontroller = storyboard.instantiateController(withIdentifier: identifier) as? MainViewController else {
-            fatalError("Why cant i find MainViewController? - Check Main.storyboard")
-        }
-        return viewcontroller
     }
 }
