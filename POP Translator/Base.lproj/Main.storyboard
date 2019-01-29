@@ -774,7 +774,7 @@
         <!--Window Controller-->
         <scene sceneID="fQ5-ZR-jtQ">
             <objects>
-                <windowController id="ow3-Hd-qE2" sceneMemberID="viewController">
+                <windowController storyboardIdentifier="LicenseWindowController" id="ow3-Hd-qE2" customClass="LicenseWindowController" customModule="POP_Translator" customModuleProvider="target" sceneMemberID="viewController">
                     <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="CY6-wH-sLR">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
@@ -790,6 +790,7 @@
                 </windowController>
                 <customObject id="Kqp-JJ-g5G" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="702" y="110"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="OUC-0Q-kAU">
@@ -802,6 +803,7 @@
                 </viewController>
                 <customObject id="t6e-TX-SZ4" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="702" y="606"/>
         </scene>
     </scenes>
     <resources>

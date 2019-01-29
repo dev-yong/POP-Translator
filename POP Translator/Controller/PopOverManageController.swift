@@ -29,7 +29,7 @@ class PopOverManageController: NSObject {
             button.action = #selector(togglePopover(_:))
         }
         
-        popover.contentViewController = MainViewController.create(storyboardName: .main)
+        popover.contentViewController = MainViewController.controller(storyboardName: .main)
         popover.contentSize = NSSize(width: 400, height: 400*16/9)
         
         eventMonitor = EventMonitor(mask: [.leftMouseDown, .rightMouseDown]) { [weak self] event in
