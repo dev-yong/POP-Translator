@@ -29,6 +29,7 @@
 		FCF5AD6822000026004609F7 /* NSStoryboard.Name + Identifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF5AD6722000026004609F7 /* NSStoryboard.Name + Identifier.swift */; };
 		FCF5AD6A2200005D004609F7 /* NSObject + reuseIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF5AD692200005D004609F7 /* NSObject + reuseIdentifier.swift */; };
 		FCF5AD6C220003F2004609F7 /* NSViewController + create.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF5AD6B220003F2004609F7 /* NSViewController + create.swift */; };
+		FCF5AD6E220004AE004609F7 /* LicenseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF5AD6D220004AE004609F7 /* LicenseViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -77,6 +78,7 @@
 		FCF5AD6722000026004609F7 /* NSStoryboard.Name + Identifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSStoryboard.Name + Identifier.swift"; sourceTree = "<group>"; };
 		FCF5AD692200005D004609F7 /* NSObject + reuseIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject + reuseIdentifier.swift"; sourceTree = "<group>"; };
 		FCF5AD6B220003F2004609F7 /* NSViewController + create.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSViewController + create.swift"; sourceTree = "<group>"; };
+		FCF5AD6D220004AE004609F7 /* LicenseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LicenseViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +148,7 @@
 			children = (
 				FC1D978821F158E900766E3D /* PopOverManageController.swift */,
 				FC1D978921F158EA00766E3D /* MainViewController.swift */,
+				FCF5AD6D220004AE004609F7 /* LicenseViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -408,6 +411,7 @@
 				FC1D978C21F158EA00766E3D /* MainViewController.swift in Sources */,
 				8D0C753D21F27CAA00EA6515 /* UserDefaults + Key.swift in Sources */,
 				FC1D978F21F160DA00766E3D /* Translator.swift in Sources */,
+				FCF5AD6E220004AE004609F7 /* LicenseViewController.swift in Sources */,
 				FCF5AD6421FFF5EB004609F7 /* Bundel + Identifier.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

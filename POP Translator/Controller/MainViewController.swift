@@ -160,20 +160,3 @@ extension MainViewController: WKUIDelegate {
 extension MainViewController: WKNavigationDelegate {
     
 }
-
-extension MainViewController {
-    // MARK: Storyboard instantiation
-    static func freshController() -> MainViewController {
-        //1.
-        
-        let storyboard = NSStoryboard(name: NSStoryboard.Name("Main"), bundle: nil)
-        //2.
-        
-        let identifier = NSStoryboard.SceneIdentifier("QuotesViewController")
-        //3.
-        guard let viewcontroller = storyboard.instantiateController(withIdentifier: identifier) as? MainViewController else {
-            fatalError("Why cant i find QuotesViewController? - Check Main.storyboard")
-        }
-        return viewcontroller
-    }
-}
