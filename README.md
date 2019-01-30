@@ -1,6 +1,6 @@
 # POP Translator
 
-<img src="images/Icon.png" width="256" href="releases/latest">
+<img src="images/Icon.png" width="256" href="../../../releases/latest">
 
 빠르게 번역기를 사용하고 싶은데, 마땅한 프로그램이 없어 직접 구현하였습니다.
 
@@ -10,7 +10,7 @@
 
 ![](images/StatusBar.png)
 
-## [Download](releases/latest)
+## [Download](../../../releases/latest)
 
 ![Release](images/Release.png)
 
