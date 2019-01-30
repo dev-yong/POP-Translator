@@ -18,7 +18,6 @@ class PopOverManageController: NSObject {
     let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.squareLength)
     let popover = NSPopover()
     var eventMonitor: EventMonitor?
-    var eventMonitor2: EventMonitor?
     
     override init() {
         super.init()

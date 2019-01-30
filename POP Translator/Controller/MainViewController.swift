@@ -34,7 +34,7 @@ class MainViewController: NSViewController {
     private let mainMenu = NSMenu()
 
     private var observations: [NSKeyValueObservation] = []
-    
+
     deinit {
         observations.forEach { NotificationCenter.default.removeObserver($0) }
         observations.removeAll()
@@ -90,6 +90,7 @@ class MainViewController: NSViewController {
         mainMenu.addItem(NSMenuItem.separator())
         translatorMenuItems.forEach { mainMenu.addItem($0) }
         mainMenu.addItem(NSMenuItem.separator())
+        mainMenu.addItem(NSMenuItem(title: "Open Source", action: #selector(openLicense), keyEquivalent: "l"))
         mainMenu.addItem(NSMenuItem(title: "Quit", action: #selector(NSApplication.terminate(_:)), keyEquivalent: "q"))
         
         settingButton.menu = mainMenu
@@ -110,6 +111,8 @@ class MainViewController: NSViewController {
                 loadHome()
             case "r":
                 webView.reload()
+            case "l":
+                openLicense()
             default:
                 break
             }
@@ -149,6 +152,12 @@ class MainViewController: NSViewController {
             } else {
                 sender.state = !isOn ? .on : .off
             }
+        }
+    }
+    
+    @objc private func openLicense() {
+        if let filePath = Bundle.main.path(forResource: "Licenses", ofType: "rtf") {
+            NSWorkspace.shared.openFile(filePath, withApplication: "TextEdit")
         }
     }
 }
