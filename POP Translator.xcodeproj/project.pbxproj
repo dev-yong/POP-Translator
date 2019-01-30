@@ -24,13 +24,12 @@
 		FC1D978D21F158EA00766E3D /* EventMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1D978A21F158EA00766E3D /* EventMonitor.swift */; };
 		FC1D978F21F160DA00766E3D /* Translator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1D978E21F160DA00766E3D /* Translator.swift */; };
 		FC3E3AA021FE6E7C00884A82 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = FC3E3A9F21FE6E7C00884A82 /* .swiftlint.yml */; };
+		FC8F98B022014A9C00E75119 /* Licenses.rtf in Resources */ = {isa = PBXBuildFile; fileRef = FC8F98AF22014A9C00E75119 /* Licenses.rtf */; };
 		FCF5AD6421FFF5EB004609F7 /* Bundel + Identifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF5AD6321FFF5EB004609F7 /* Bundel + Identifier.swift */; };
 		FCF5AD6621FFF606004609F7 /* NSNotification.Name + Custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF5AD6521FFF606004609F7 /* NSNotification.Name + Custom.swift */; };
 		FCF5AD6822000026004609F7 /* NSStoryboard.Name + Identifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF5AD6722000026004609F7 /* NSStoryboard.Name + Identifier.swift */; };
 		FCF5AD6A2200005D004609F7 /* NSObject + reuseIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF5AD692200005D004609F7 /* NSObject + reuseIdentifier.swift */; };
 		FCF5AD6C220003F2004609F7 /* Controllable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF5AD6B220003F2004609F7 /* Controllable.swift */; };
-		FCF5AD6E220004AE004609F7 /* LicenseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF5AD6D220004AE004609F7 /* LicenseViewController.swift */; };
-		FCF5AD70220084AE004609F7 /* LicenseWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF5AD6F220084AE004609F7 /* LicenseWindowController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -74,13 +73,12 @@
 		FC1D978A21F158EA00766E3D /* EventMonitor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventMonitor.swift; sourceTree = "<group>"; };
 		FC1D978E21F160DA00766E3D /* Translator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Translator.swift; sourceTree = "<group>"; };
 		FC3E3A9F21FE6E7C00884A82 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .swiftlint.yml; sourceTree = "<group>"; };
+		FC8F98AF22014A9C00E75119 /* Licenses.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = Licenses.rtf; sourceTree = "<group>"; };
 		FCF5AD6321FFF5EB004609F7 /* Bundel + Identifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundel + Identifier.swift"; sourceTree = "<group>"; };
 		FCF5AD6521FFF606004609F7 /* NSNotification.Name + Custom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSNotification.Name + Custom.swift"; sourceTree = "<group>"; };
 		FCF5AD6722000026004609F7 /* NSStoryboard.Name + Identifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSStoryboard.Name + Identifier.swift"; sourceTree = "<group>"; };
 		FCF5AD692200005D004609F7 /* NSObject + reuseIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject + reuseIdentifier.swift"; sourceTree = "<group>"; };
 		FCF5AD6B220003F2004609F7 /* Controllable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Controllable.swift; sourceTree = "<group>"; };
-		FCF5AD6D220004AE004609F7 /* LicenseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LicenseViewController.swift; sourceTree = "<group>"; };
-		FCF5AD6F220084AE004609F7 /* LicenseWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LicenseWindowController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,8 +148,6 @@
 			children = (
 				FC1D978821F158E900766E3D /* PopOverManageController.swift */,
 				FC1D978921F158EA00766E3D /* MainViewController.swift */,
-				FCF5AD6D220004AE004609F7 /* LicenseViewController.swift */,
-				FCF5AD6F220084AE004609F7 /* LicenseWindowController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -180,15 +176,15 @@
 		8D60024821F1210000663EE4 /* POP Translator */ = {
 			isa = PBXGroup;
 			children = (
+				8D60025321F1210100663EE4 /* MenuWebView.entitlements */,
+				8D60025221F1210100663EE4 /* Info.plist */,
 				8D60024921F1210000663EE4 /* AppDelegate.swift */,
+				FC8F98B222014F6300E75119 /* Storyboard */,
+				FC8F98B122014F5D00E75119 /* Resource */,
 				8D0C753E21F27CD800EA6515 /* Controller */,
 				8D0C753B21F27C9400EA6515 /* Util */,
 				8D0C753821F27C4500EA6515 /* Model */,
 				8D0C753721F27C3E00EA6515 /* Extension */,
-				8D60024D21F1210100663EE4 /* Assets.xcassets */,
-				8D60024F21F1210100663EE4 /* Main.storyboard */,
-				8D60025221F1210100663EE4 /* Info.plist */,
-				8D60025321F1210100663EE4 /* MenuWebView.entitlements */,
 				FC165CE621FE885900046926 /* BridingHeader.h */,
 			);
 			path = "POP Translator";
@@ -213,6 +209,23 @@
 				D719A558BC5389507CBAC9D7 /* Pods_POP_Translator.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FC8F98B122014F5D00E75119 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				8D60024D21F1210100663EE4 /* Assets.xcassets */,
+				FC8F98AF22014A9C00E75119 /* Licenses.rtf */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		FC8F98B222014F6300E75119 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				8D60024F21F1210100663EE4 /* Main.storyboard */,
+			);
+			path = Storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -312,6 +325,7 @@
 				FC3E3AA021FE6E7C00884A82 /* .swiftlint.yml in Resources */,
 				8D60024E21F1210100663EE4 /* Assets.xcassets in Resources */,
 				8D60025121F1210100663EE4 /* Main.storyboard in Resources */,
+				FC8F98B022014A9C00E75119 /* Licenses.rtf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -413,9 +427,7 @@
 				FC1D978B21F158EA00766E3D /* PopOverManageController.swift in Sources */,
 				FC1D978C21F158EA00766E3D /* MainViewController.swift in Sources */,
 				8D0C753D21F27CAA00EA6515 /* UserDefaults + Key.swift in Sources */,
-				FCF5AD70220084AE004609F7 /* LicenseWindowController.swift in Sources */,
 				FC1D978F21F160DA00766E3D /* Translator.swift in Sources */,
-				FCF5AD6E220004AE004609F7 /* LicenseViewController.swift in Sources */,
 				FCF5AD6421FFF5EB004609F7 /* Bundel + Identifier.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
